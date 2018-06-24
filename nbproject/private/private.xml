@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/home/user129/NetBeansProjects/project1/nbproject/build-impl.xml</file>
             <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/glassfish-resources.xml</file>
+            <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/jsp/privet.jsp</file>
             <file>file:/home/user129/NetBeansProjects/project1/web/index.html</file>
             <file>file:/home/user129/NetBeansProjects/project1/web/admin.jsp</file>
-            <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/home/user129/NetBeansProjects/project1/src/java/controller/PrivetController.java</file>
             <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/dispatcher-servlet.xml</file>
-            <file>file:/home/user129/NetBeansProjects/project1/web/admin.html</file>
-            <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/web.xml</file>
-            <file>file:/home/user129/NetBeansProjects/project1/web/redirect.jsp</file>
+            <file>file:/home/user129/NetBeansProjects/project1/web/WEB-INF/applicationContext.xml</file>
         </group>
     </open-files>
 </project-private>
