@@ -1,7 +1,13 @@
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%-- 
+    Document   : admin
+    Created on : Jun 18, 2018, 2:19:43 AM
+    Author     : user129
+--%>
 
 
-<!doctype html>
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="false"%>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -15,35 +21,28 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-
+    <h1>Here you can add content to table1.</h1>    
     
-    
-    
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button">Кнопка</button>
+    <sf:form modelAttribute="entryTableOne" method="POST">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit">Add</button>
+            </div>
+            <sf:input path="content" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"/>
         </div>
-        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-    </div>
+    </sf:form>
 
-    
-    <form action="hello.html">
-        <strong>Select a subject:</strong>
-        
-        <input type="text" name="subject_id" value="" />
+    <%--
+    <sf:form modelAttribute="entryTableOne" method="post">     
+                
+        <sf:input path="content" />
         
         <input type="submit" value="Отправить" name="Отправить" />
+                
+    </sf:form>
+    --%>
+    
         
-        
-    </form>
-    
- 
-    
-    
-    
-    
-    
     
     
     <!-- Optional JavaScript -->
@@ -51,5 +50,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
+  
+    </body>
 </html>
