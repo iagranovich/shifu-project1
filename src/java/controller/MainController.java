@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import service.TableOneService;
@@ -32,14 +33,20 @@ public class MainController {
     }
     
     @RequestMapping(method=RequestMethod.POST, value="/admin")
-    public String addEntry(EntryTableOne entry){
-        tableOneService.addEntry(entry);
-        return "redirect:/main.htm";
+    public String addEntry(@ModelAttribute("entryTableOne") EntryTableOne entryTableOne){
+        tableOneService.addEntry(entryTableOne);
+        return "redirect:main.htm";
     }
     
     @RequestMapping("/admin")
     public String Admin(Model model){
         model.addAttribute(new EntryTableOne());
         return "admin";
+    }
+    
+    @RequestMapping("/entry/{slug}")
+    public String Slug(@PathVariable("slug") String slug, Model model){
+        model.addAttribute("entry", tableOneService.getBySlug(slug));
+        return "entry";
     }
 }

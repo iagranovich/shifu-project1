@@ -20,10 +20,14 @@ public class TableOneService {
     TableOneDao tableOneDao;
     
     public List<EntryTableOne> findAll(){
-        return tableOneDao.fineAll();
+        return tableOneDao.finedAll();
     }
     
     public void addEntry(EntryTableOne entry){
         tableOneDao.addEntry(entry);
+    }
+    
+    public EntryTableOne getBySlug(String slug){
+        return tableOneDao.getBySlug(slug);
     }
 }

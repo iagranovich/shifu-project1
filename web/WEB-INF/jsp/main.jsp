@@ -35,11 +35,39 @@
         --%>
         
         
-        <div class="list-group">            
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">content</a>
+        <div class="list-group">  
+            <table>
+                <tr>  
+                    <th>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Content</a>
+                    </th>
+                     <th>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Title</a>
+                    </th>
+                     <th>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Slug</a>
+                    </th>
+                    <th>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Show</a>
+                    </th>                    
+                </tr>            
             <c:forEach var="entryTableOne" items="${tableOne}">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-primary"><c:out value="${entryTableOne.content}"/></a>
-            </c:forEach>                
+                <tr>                    
+                    <td>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-primary"><c:out value="${entryTableOne.content}"/></a>
+                    </td>
+                    <td>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-primary"><c:out value="${entryTableOne.title}"/></a>
+                    </td> 
+                    <td>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-primary"><c:out value="${entryTableOne.slug}"/></a>
+                    </td>                      
+                    <td>
+                        <a href="/project1/entry/${entryTableOne.slug}.htm" class="list-group-item list-group-item-action list-group-item-primary">Просмотреть</a>
+                    </td>
+                </tr>
+            </c:forEach> 
+            </table>
         </div>
         
         

@@ -24,13 +24,18 @@ public class TableOneDao {
         this.jdbcTemplate = jdbcTemplate;
     }
     
-    public List<EntryTableOne> fineAll(){
-        String sql = "SELECT content FROM table1";
+    public List<EntryTableOne> finedAll(){
+        String sql = "SELECT * FROM table1";
         return jdbcTemplate.query(sql, new EntryTableOneMapper());
     }
     
     public void addEntry (EntryTableOne entry){
-        String sql ="INSERT INTO table1 (content) VALUES (?)";
-        jdbcTemplate.update(sql, entry.getContent());
+        String sql ="INSERT INTO table1 (content,title,slug) VALUES (?,?,?)";
+        jdbcTemplate.update(sql, entry.getContent(), entry.getTitle(), entry.getSlug());
+    }
+    
+    public EntryTableOne getBySlug(String slug){
+        String sql = "SELECT * FROM table1 WHERE slug=?";
+        return jdbcTemplate.queryForObject(sql, new EntryTableOneMapper(), slug);
     }
 }

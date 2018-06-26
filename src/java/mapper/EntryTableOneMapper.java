@@ -20,6 +20,8 @@ public class EntryTableOneMapper implements RowMapper<EntryTableOne>{
     public EntryTableOne mapRow(ResultSet rs, int i) throws SQLException {
         EntryTableOne entry = new EntryTableOne();
         entry.setContent(rs.getString("content"));
+        entry.setTitle(rs.getString("title"));
+        entry.setSlug(rs.getString("slug"));
         return entry;
     }
     
