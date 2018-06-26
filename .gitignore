@@ -2,12 +2,13 @@
 
 
 ### NetBeans ###
-nbproject/private/
+nbproject/
 build/
 nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+setup/
 
 
 ### Java ###
