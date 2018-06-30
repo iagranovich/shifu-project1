@@ -48,16 +48,12 @@ public class ProjOneConfig {
         return dataSource;
     }
         
-    @Bean
-    //@Autowired
-    //@Qualifier("ssss")
+    @Bean    
     public JdbcTemplate jdbcTemplate(){        
         return new JdbcTemplate(dataSource());
     }
     
     @Bean
-    //Autowired
-    //@Qualifier("ssss")
     public TableOneDao tableOneDao(){
         return new TableOneDao(jdbcTemplate());
     }

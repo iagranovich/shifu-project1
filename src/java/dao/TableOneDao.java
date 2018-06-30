@@ -30,8 +30,8 @@ public class TableOneDao {
     }
     
     public void addEntry (EntryTableOne entry){
-        String sql ="INSERT INTO table1 (content,title,slug) VALUES (?,?,?)";
-        jdbcTemplate.update(sql, entry.getContent(), entry.getTitle(), entry.getSlug());
+        String sql ="INSERT INTO table1 (title,content,slug) VALUES (?,?,?)";
+        jdbcTemplate.update(sql, entry.getTitle(), entry.getContent(), entry.getSlug());
     }
     
     public EntryTableOne getBySlug(String slug){

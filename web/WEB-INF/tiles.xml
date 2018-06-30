@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+   
+<tiles-definitions>
+    <definition  name="layout"
+        template="/WEB-INF/jsp/layout.jsp">  <!--  Общий  шаблон  -->    
+        <put-attribute name="content" value=""/>  
+        <put-attribute name="title" value=""/>  
+    </definition>
+    
+    <definition name="main" extends="layout">
+        <put-attribute name="title" value="Main"/> 
+        <put-attribute name="content" value="/WEB-INF/jsp/main.jsp"/>
+    </definition>
+    
+     <definition name="admin" extends="layout"> 
+         <put-attribute name="title" value="Admin"/> 
+        <put-attribute name="content" value="/WEB-INF/jsp/admin.jsp"/>
+    </definition>
+    
+    <definition name="entry" extends="layout"> 
+        <put-attribute name="title" value="Entry"/> 
+        <put-attribute name="content" value="/WEB-INF/jsp/entry.jsp"/>
+    </definition>
+</tiles-definitions>
