@@ -4,24 +4,41 @@
    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
    
 <tiles-definitions>
-    <definition  name="layout"
-        template="/WEB-INF/jsp/layout.jsp">  <!--  Общий  шаблон  -->    
-        <put-attribute name="content" value=""/>  
-        <put-attribute name="title" value=""/>  
+    <definition  name="template_admin"
+        template="/WEB-INF/jsp/template_admin.jsp">  <!--  Общий  шаблон  -->    
+        <put-attribute name="title" value=""/> 
+        <put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp"/> 
+        <put-attribute name="content" value=""/>          
     </definition>
     
-    <definition name="main" extends="layout">
-        <put-attribute name="title" value="Main"/> 
-        <put-attribute name="content" value="/WEB-INF/jsp/main.jsp"/>
+    <definition  name="template_user"
+        template="/WEB-INF/jsp/template_user.jsp">  <!--  Общий  шаблон  -->    
+        <put-attribute name="title" value=""/>         
+        <put-attribute name="content" value=""/>          
     </definition>
     
-     <definition name="admin" extends="layout"> 
-         <put-attribute name="title" value="Admin"/> 
+    <definition name="articles" extends="template_admin">
+        <put-attribute name="title" value="Articles"/> 
+        <put-attribute name="content" value="/WEB-INF/jsp/articles.jsp"/>
+    </definition>
+    
+    <definition name="admin" extends="template_admin">
+        <put-attribute name="title" value="Admin"/> 
         <put-attribute name="content" value="/WEB-INF/jsp/admin.jsp"/>
     </definition>
     
-    <definition name="entry" extends="layout"> 
+     <definition name="add" extends="template_admin"> 
+        <put-attribute name="title" value="Add"/> 
+        <put-attribute name="content" value="/WEB-INF/jsp/add.jsp"/>
+    </definition>
+    
+    <definition name="entry" extends="template_user"> 
         <put-attribute name="title" value="Entry"/> 
         <put-attribute name="content" value="/WEB-INF/jsp/entry.jsp"/>
+    </definition>
+    
+    <definition name="main" extends="template_user">
+        <put-attribute name="title" value="Main"/> 
+        <put-attribute name="content" value="/WEB-INF/jsp/main.jsp"/>
     </definition>
 </tiles-definitions>

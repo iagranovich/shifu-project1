@@ -32,19 +32,30 @@ public class MainController {
         return "main";
     }
     
-    @RequestMapping(method=RequestMethod.POST, value="/admin")
-    public String addEntry(@ModelAttribute("entryTableOne") EntryTableOne entryTableOne){
-        tableOneService.addEntry(entryTableOne);
-        return "redirect:main.htm";
-    }
-    
     @RequestMapping("/admin")
-    public String Admin(Model model){
-        model.addAttribute(new EntryTableOne());
+    public String Admin(){
         return "admin";
     }
     
-    @RequestMapping("/entry/{slug}")
+    @RequestMapping("/admin/articles")
+    public String Articles(Model model){
+        model.addAttribute("tableOne", tableOneService.findAll());
+        return "articles";
+    }
+    
+    @RequestMapping(method=RequestMethod.POST, value="/admin/articles/add")
+    public String AddEntry(@ModelAttribute("entryTableOne") EntryTableOne entryTableOne){
+        tableOneService.addEntry(entryTableOne);
+        return "redirect:/admin/articles.htm";
+    }
+    
+    @RequestMapping("/admin/articles/add")
+    public String AddPage(Model model){
+        model.addAttribute(new EntryTableOne());
+        return "add";
+    }
+    
+    @RequestMapping("/articles/{slug}")
     public String Slug(@PathVariable("slug") String slug, Model model){
         model.addAttribute("entry", tableOneService.getBySlug(slug));
         return "entry";
