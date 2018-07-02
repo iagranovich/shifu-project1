@@ -38,4 +38,19 @@ public class TableOneDao {
         String sql = "SELECT * FROM table1 WHERE slug=?";
         return jdbcTemplate.queryForObject(sql, new EntryTableOneMapper(), slug);
     }
+    
+    public void deleteArt(int id){
+        String sql = "DELETE FROM table1 WHERE id=?";
+        jdbcTemplate.update(sql, id);
+    } 
+    
+    public EntryTableOne getById(int id){
+        String sql = "SELECT * FROM table1 WHERE id=?";
+        return jdbcTemplate.queryForObject(sql, new EntryTableOneMapper(), id);
+    }
+    
+    public void updateArt(EntryTableOne entry){
+        String sql = "UPDATE table1 SET title=?, content=?, slug=? WHERE id=?";
+        jdbcTemplate.update(sql, entry.getTitle(), entry.getContent(), entry.getSlug(), entry.getId());
+    }
 }

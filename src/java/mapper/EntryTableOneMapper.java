@@ -19,6 +19,7 @@ public class EntryTableOneMapper implements RowMapper<EntryTableOne>{
     @Override
     public EntryTableOne mapRow(ResultSet rs, int i) throws SQLException {
         EntryTableOne entry = new EntryTableOne();
+        entry.setId(rs.getInt("id"));
         entry.setContent(rs.getString("content"));
         entry.setTitle(rs.getString("title"));
         entry.setSlug(rs.getString("slug"));

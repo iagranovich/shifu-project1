@@ -29,7 +29,7 @@
     
      <definition name="add" extends="template_admin"> 
         <put-attribute name="title" value="Add"/> 
-        <put-attribute name="content" value="/WEB-INF/jsp/add.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/update.jsp"/>        
     </definition>
     
     <definition name="entry" extends="template_user"> 
@@ -40,5 +40,10 @@
     <definition name="main" extends="template_user">
         <put-attribute name="title" value="Main"/> 
         <put-attribute name="content" value="/WEB-INF/jsp/main.jsp"/>
+    </definition>
+    
+     <definition name="edit" extends="template_admin">
+        <put-attribute name="title" value="Edit"/> 
+        <put-attribute name="content" value="/WEB-INF/jsp/update.jsp"/>        
     </definition>
 </tiles-definitions>

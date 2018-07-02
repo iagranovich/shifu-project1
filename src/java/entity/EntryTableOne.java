@@ -11,10 +11,20 @@ package entity;
  */
 public class EntryTableOne {
     
+    private int id;
     private String content;
     private String title;
     private String slug;
 
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getTitle() {
         return title;
     }

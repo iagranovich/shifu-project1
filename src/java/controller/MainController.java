@@ -45,12 +45,17 @@ public class MainController {
     
     @RequestMapping(method=RequestMethod.POST, value="/admin/articles/add")
     public String AddEntry(@ModelAttribute("entryTableOne") EntryTableOne entryTableOne){
-        tableOneService.addEntry(entryTableOne);
+        if(entryTableOne.getId() == 0){
+            tableOneService.addEntry(entryTableOne);    
+        }else{
+            tableOneService.updateArt(entryTableOne);
+        }
+        
         return "redirect:/admin/articles.htm";
     }
     
     @RequestMapping("/admin/articles/add")
-    public String AddPage(Model model){
+    public String AddEntryPage(Model model){
         model.addAttribute(new EntryTableOne());
         return "add";
     }
@@ -59,5 +64,17 @@ public class MainController {
     public String Slug(@PathVariable("slug") String slug, Model model){
         model.addAttribute("entry", tableOneService.getBySlug(slug));
         return "entry";
+    }
+    
+    @RequestMapping("/admin/articles/delete/{id}")
+    public String DeleteArt(@PathVariable("id") int id){
+        tableOneService.deleteArt(id);
+        return "redirect:/admin/articles.htm";
+    }
+    
+    @RequestMapping("/admin/articles/edit/{id}")
+    public String EditArtPage(@PathVariable("id") int id, Model model){
+        model.addAttribute("entryTableOne", tableOneService.getById(id));
+        return "edit";
     }
 }

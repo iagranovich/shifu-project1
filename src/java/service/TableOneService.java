@@ -30,4 +30,16 @@ public class TableOneService {
     public EntryTableOne getBySlug(String slug){
         return tableOneDao.getBySlug(slug);
     }
+    
+    public void deleteArt(int id){
+        tableOneDao.deleteArt(id);
+    }
+    
+    public EntryTableOne getById(int id){
+        return tableOneDao.getById(id);
+    }
+    
+    public void updateArt(EntryTableOne entry){
+        tableOneDao.updateArt(entry);
+    }
 }

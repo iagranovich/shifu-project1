@@ -6,8 +6,8 @@
         <tr class="table-dark" >  
             <th>Title</th>
             <th>Content</th>
-            <th>Slug</th>
-            <th>Show</th>                    
+            <th>Slug</th>            
+            <th>Tools</th> 
         </tr>
     </thead>
     <tbody>
@@ -15,9 +15,11 @@
             <tr class="table-primary">                            
                 <td><c:out value="${entryTableOne.title}"/></td>
                 <td><c:out value="${entryTableOne.content}"/></td>
-                <td><c:out value="${entryTableOne.slug}"/></td>
+                <td><c:out value="${entryTableOne.slug}"/></td>               
                 <td>
-                    <a href="/project1/articles/${entryTableOne.slug}.htm">Просмотреть</a>
+                    <a class="btn btn-danger" href="/project1/admin/articles/delete/${entryTableOne.id}.htm" role="button">Удалить</a>
+                    <a class="btn btn-primary" href="/project1/admin/articles/edit/${entryTableOne.id}.htm" role="button">Редактировать</a>
+                    <a class="btn btn-success" href="/project1/articles/${entryTableOne.slug}.htm" role="button">Просмотреть</a>
                 </td>
             </tr>
         </c:forEach> 
