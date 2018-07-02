@@ -26,4 +26,4 @@
     </tbody>
 </table>
 
-<h2><a href="articles/add.htm">Добавить статью</a></h2>
+<h4><a href="articles/add.htm">Добавить статью</a></h4>
